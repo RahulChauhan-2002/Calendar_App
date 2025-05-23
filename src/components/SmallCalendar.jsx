@@ -45,22 +45,22 @@ export default function SmallCalendar() {
   }
   return (
     <div className="mt-9">
-      <header className="flex justify-between">
-        <p className="text-gray-500 font-bold">
-          {dayjs(new Date(dayjs().year(), currentMonthIdx)).format(
-            "MMMM YYYY"
-          )}
+      <header className="flex justify-between items-center px-4 py-2 border-b">
+        <p className="text-gray-700 font-bold text-lg">
+          {dayjs(new Date(dayjs().year(), currentMonthIdx)).format("MMMM YYYY")}
         </p>
-        <div>
-          <button onClick={handlePrevMonth}>
-            <span className="material-icons-outlined cursor-pointer text-gray-600 mx-2">
-              <FaChevronLeft />
-            </span>
+        <div className="flex items-center space-x-2">
+          <button 
+            onClick={handlePrevMonth} 
+            className="p-2 rounded hover:bg-gray-200"
+          >
+            <FaChevronLeft className="text-gray-600" />
           </button>
-          <button onClick={handleNextMonth}>
-            <span className="material-icons-outlined cursor-pointer text-gray-600 mx-2">
-              <FaChevronRight />
-            </span>
+          <button 
+            onClick={handleNextMonth} 
+            className="p-2 rounded hover:bg-gray-200"
+          >
+            <FaChevronRight className="text-gray-600" />
           </button>
         </div>
       </header>
